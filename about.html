@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>VORA · About | Silent Luxury Atelier</title>
+  <meta name="description" content="Discover the story behind VORA — a silent luxury atelier dedicated to mindful craft, timeless objects, and a quieter way of living.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fefaf5;
+      color: #1a1a1a;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* header & navigation (consistent with VORA branding) */
+    .site-header {
+      padding: 24px 0 16px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      background: rgba(254,250,245,0.94);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      text-decoration: none;
+    }
+
+    .brand-name {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #2b2b2b 0%, #5e3a2c 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .brand-dot {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #c17b4c;
+      line-height: 1;
+    }
+
+    .brand-tag {
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+      color: #8f6a4c;
+      margin-left: 6px;
+      border-left: 1px solid #decbb8;
+      padding-left: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #2c2b2a;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #c17b4c;
+    }
+
+    .cart-icon {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #f2e7de;
+      padding: 8px 14px;
+      border-radius: 40px;
+      font-weight: 600;
+    }
+
+    /* about hero section */
+    .about-hero {
+      padding: 48px 0 32px;
+      text-align: center;
+    }
+
+    .about-hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #2b2b2b, #6f4e37);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 16px;
+    }
+
+    .about-hero p {
+      color: #6b4f39;
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    /* main content blocks */
+    .story-block {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      align-items: center;
+      margin: 64px 0 56px;
+    }
+
+    .story-text {
+      flex: 1.2;
+    }
+
+    .story-text h2 {
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      color: #2f241e;
+      border-left: 4px solid #c17b4c;
+      padding-left: 20px;
+    }
+
+    .story-text p {
+      margin-bottom: 20px;
+      color: #3b3028;
+      line-height: 1.65;
+    }
+
+    .story-image {
+      flex: 1;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+    }
+
+    .story-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .story-image:hover img {
+      transform: scale(1.02);
+    }
+
+    /* values grid */
+    .values-section {
+      background: white;
+      border-radius: 48px;
+      padding: 56px 48px;
+      margin: 56px 0;
+      border: 1px solid #f1e4da;
+    }
+
+    .values-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .values-title h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #2f241e;
+    }
+
+    .values-title p {
+      color: #7a624b;
+      max-width: 500px;
+      margin: 12px auto 0;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+    }
+
+    .value-card {
+      text-align: center;
+      padding: 24px 16px;
+    }
+
+    .value-icon {
+      font-size: 2.8rem;
+      margin-bottom: 18px;
+    }
+
+    .value-card h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #4d3524;
+    }
+
+    .value-card p {
+      font-size: 0.9rem;
+      color: #5c4b3b;
+      line-height: 1.5;
+    }
+
+    /* team / studio section */
+    .studio-section {
+      margin: 64px 0 56px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      align-items: center;
+      flex-direction: row-reverse;
+    }
+
+    .studio-text {
+      flex: 1.1;
+    }
+
+    .studio-text h2 {
+      font-size: 1.9rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #2f241e;
+    }
+
+    .studio-text p {
+      color: #3b3028;
+      margin-bottom: 18px;
+    }
+
+    .studio-image {
+      flex: 1;
+      border-radius: 32px;
+      overflow: hidden;
+    }
+
+    .studio-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* quote block */
+    .quote-block {
+      background: #f7eee8;
+      border-radius: 48px;
+      padding: 56px 48px;
+      text-align: center;
+      margin: 56px 0 48px;
+    }
+
+    .quote-block blockquote {
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 1.4;
+      color: #2f241e;
+      max-width: 800px;
+      margin: 0 auto 20px;
+      font-style: normal;
+      letter-spacing: -0.3px;
+    }
+
+    .quote-author {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #c17b4c;
+      font-weight: 500;
+    }
+
+    /* back to shop */
+    .back-link {
+      text-align: center;
+      margin: 40px 0 48px;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #c17b4c;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #c17b4c;
+      text-decoration: none;
+      transition: 0.2s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      background: #c17b4c;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* footer */
+    .footer {
+      border-top: 1px solid #e9dbd0;
+      padding: 48px 0 32px;
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .footer-col .brand-mini {
+      font-weight: 700;
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, #2b2b2b, #5e3a2c);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .footer-col p {
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: #5c4b3b;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 56px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #4a382c;
+      font-size: 0.85rem;
+    }
+
+    .footer-links a:hover {
+      color: #c17b4c;
+    }
+
+    @media (max-width: 780px) {
+      .container { padding: 0 20px; }
+      .story-block, .studio-section { flex-direction: column; }
+      .values-section { padding: 40px 24px; }
+      .quote-block { padding: 40px 24px; }
+      .quote-block blockquote { font-size: 1.3rem; }
+      .header-inner { flex-direction: column; align-items: center; }
+      .nav-links { flex-wrap: wrap; justify-content: center; gap: 20px; }
+      .footer { flex-direction: column; align-items: center; text-align: center; }
+      .footer-links { justify-content: center; }
+      .about-hero h1 { font-size: 2.3rem; }
+    }
+
+    /* animations */
+    .story-block, .studio-section, .values-card {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.6s ease forwards;
+    }
+    .story-block { animation-delay: 0.1s; }
+    .studio-section { animation-delay: 0.2s; }
+    .values-card:nth-child(1) { animation-delay: 0.15s; }
+    .values-card:nth-child(2) { animation-delay: 0.25s; }
+    .values-card:nth-child(3) { animation-delay: 0.35s; }
+    .values-card:nth-child(4) { animation-delay: 0.45s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#" class="brand" id="brandHomeLink">
+      <span class="brand-name">VORA</span>
+      <span class="brand-dot">●</span>
+      <span class="brand-tag">silent luxury</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+      <div class="cart-icon">
+        <span>👜</span> <span>Cart (0)</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="about-hero">
+      <h1>The story of VORA</h1>
+      <p>An atelier born from the quiet space between craft and consciousness — where every object carries the intention of slower, more meaningful living.</p>
+    </div>
+
+    <!-- Origin story block -->
+    <div class="story-block">
+      <div class="story-text">
+        <h2>Roots in stillness</h2>
+        <p>VORA was founded in 2018 by designer and material researcher Elena Verdi, who envisioned a brand that rejects excess and embraces the poetry of imperfection. After years of working in fast-paced fashion houses, Elena retreated to the Japanese countryside and later to the hills of Tuscany — discovering that true luxury is not about abundance, but about resonance.</p>
+        <p>What began as a small studio crafting ceramic vessels and linen textiles has grown into a global community of mindful collectors. Yet our essence remains unchanged: each piece is designed to be held, used, and cherished for a lifetime. We collaborate with artisans in Kyoto, Milan, and Marrakech — preserving techniques that predate industrialization.</p>
+        <p>The name <strong>VORA</strong> draws from the Latin <em>vorare</em> (to devour) — not greedily, but with deep absorption of beauty and slowness. Our work is an invitation to consume less, but feel more.</p>
+      </div>
+      <div class="story-image">
+        <img src="https://picsum.photos/id/144/700/550" alt="VORA founder's studio with natural light and ceramic pieces" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Values grid: unique branding pillars -->
+    <div class="values-section">
+      <div class="values-title">
+        <h2>Silent pillars</h2>
+        <p>Four commitments that guide every decision, from material sourcing to your unboxing experience.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">🌿</div>
+          <h3>Regenerative craft</h3>
+          <p>We use organic hemp, upcycled metals, and natural dyes. Our packaging is 100% plastic-free and seeded with wildflower paper.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🕯️</div>
+          <h3>Slow production</h3>
+          <p>Small batches, never overproduced. Each item rests for weeks between stages — allowing materials to settle into their final form.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🤲</div>
+          <h3>Artisan equity</h3>
+          <p>Every maker in our network receives fair wages, healthcare, and creative freedom. We publish our supply chain openly.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🌑</div>
+          <h3>Radical transparency</h3>
+          <p>From carbon footprint to profit margins — we share quarterly impact reports. No greenwashing, only honest evolution.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Studio / team story -->
+    <div class="studio-section">
+      <div class="studio-text">
+        <h2>Our atelier · Milan & Kyoto</h2>
+        <p>VORA operates from two creative hubs: a sunlit former bookbinding workshop in Milan’s Brera district, and a traditional <em>machiya</em> townhouse in Kyoto’s Higashiyama ward. Between these spaces, a team of twelve — designers, ceramicists, weavers, and botanists — collaborates across continents.</p>
+        <p>We don't believe in "creative directors" as celebrities. Instead, every voice shapes the final object. Our weekly silent studio sessions (one hour of collective wordless making) have become a ritual that strips away ego and invites intuition.</p>
+        <p>In 2024, we launched the VORA Residency — inviting one emerging craftsperson per year to develop a collection using our material archive. We are proud to be a B Corp candidate and a signatory of the Fashion Pact.</p>
+      </div>
+      <div class="studio-image">
+        <img src="https://picsum.photos/id/104/650/500" alt="VORA atelier workspace with hands shaping clay" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Philosophy quote block -->
+    <div class="quote-block">
+      <blockquote>
+        “Luxury is not the accumulation of things, but the depth of attention you bring to a single object, day after day.”
+      </blockquote>
+      <div class="quote-author">— Elena Verdi, founder of VORA</div>
+    </div>
+
+    <!-- Back to homepage link -->
+    <div class="back-link">
+      <a href="#" class="btn-outline" id="backToShop">← Discover the collection</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer">
+    <div class="footer-col">
+      <span class="brand-mini">VORA</span>
+      <p>© 2025 — silent luxury atelier<br>Milan / Kyoto / New York</p>
+    </div>
+    <div class="footer-links">
+      <ul>
+        <li><a href="#">Shipping & returns</a></li>
+        <li><a href="#">Material stories</a></li>
+        <li><a href="#">Sustainability</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="#">Press</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Interactive features: cart counter, navigation simulation, brand consistency
+  let cartCount = 0;
+  const cartSpan = document.querySelector('.cart-icon span:last-child');
+  function updateCartDisplay() {
+    if(cartSpan) cartSpan.innerText = `Cart (${cartCount})`;
+  }
+  
+  // Home navigation simulation
+  const homeLink = document.getElementById('brandHomeLink');
+  const backBtn = document.getElementById('backToShop');
+  const navShopLink = document.querySelector('.nav-links a[href="#"]');
+  
+  function goToHomepage() {
+    alert("✨ Returning to VORA — where silence meets substance.\n(Complete e-commerce experience would lead you to our immersive home page.)");
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  
+  if(homeLink) homeLink.addEventListener('click', (e) => { e.preventDefault(); goToHomepage(); });
+  if(backBtn) backBtn.addEventListener('click', (e) => { e.preventDefault(); goToHomepage(); });
+  if(navShopLink) navShopLink.addEventListener('click', (e) => { e.preventDefault(); goToHomepage(); });
+  
+  // Other nav links (shop, collections, journal, studio) with gentle brand message
+  const allNavAs = document.querySelectorAll('.nav-links a, .footer-links a');
+  allNavAs.forEach(link => {
+    if(link.getAttribute('href') === '#') {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        if(link.innerText.includes('Shipping') || link.innerText.includes('Material') || link.innerText.includes('Sustainability') || link.innerText.includes('Instagram') || link.innerText.includes('Journal')) {
+          alert(`🌿 VORA: Explore our ${link.innerText} section — more stories await.`);
+        } else if(link.innerText.includes('Shop')) {
+          alert(`🛍️ Step into the VORA archive — each piece tells a quiet story.`);
+        } else {
+          alert(`🕯️ VORA · ${link.innerText} — thank you for your curiosity.`);
+        }
+      });
+    }
+  });
+  
+  // Cart interaction (respectful and on-brand)
+  const cartDiv = document.querySelector('.cart-icon');
+  if(cartDiv) {
+    cartDiv.addEventListener('click', () => {
+      alert(`Your VORA bag holds ${cartCount} pieces. Each one, an invitation to slow down.`);
+    });
+  }
+  
+  // Optional: subtle demo cart add (just for interaction warmth)
+  const valueCards = document.querySelectorAll('.value-card');
+  if(valueCards.length) {
+    // no automatic add, just keep the brand tone
+    console.log("VORA About page — rooted in craft, transparency, and silence.");
+  }
+  
+  // Lazy smooth fade already handled by CSS, add a little timestamp greeting
+  const currentHour = new Date().getHours();
+  if(currentHour < 12 && currentHour > 5) {
+    document.querySelector('.about-hero p').innerHTML += `<span style="display: block; font-size: 0.8rem; margin-top: 8px; color: #b48a6a;">☁️ Good morning — thank you for slowing down with us.</span>`;
+  } else if (currentHour >= 18) {
+    document.querySelector('.about-hero p').innerHTML += `<span style="display: block; font-size: 0.8rem; margin-top: 8px; color: #b48a6a;">🌙 Evening — quiet hours at the atelier.</span>`;
+  }
+  
+  // Ensure images have alt attributes already, but add a dynamic check
+  const images = document.querySelectorAll('img');
+  images.forEach(img => {
+    if(!img.alt || img.alt === '') {
+      img.alt = 'VORA atelier imagery — crafted with intention';
+    }
+  });
+</script>
+</body>
+</html>
